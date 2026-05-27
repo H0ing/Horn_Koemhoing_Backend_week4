@@ -1,0 +1,1 @@
+import {articles, journalists, categories} from "./../model/data.js";
