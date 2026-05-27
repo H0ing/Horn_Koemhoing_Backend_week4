@@ -1,4 +1,11 @@
 import { Router } from "express";
+import {
+  getAllArticles,
+  getArticle,
+  createArticle,
+  updateArticle,
+  deleteArticle
+} from "./../controllers/articleController.js";
 
 const articleRouter = Router();
 
@@ -6,18 +13,19 @@ const articleRouter = Router();
 
 
 // •	GET /articles — Get all articles
-articleRouter.get('/')
+articleRouter.get('/', getAllArticles);
 
 // •	GET /articles/:id — Get a single article by ID
-articleRouter.get('/:id')
+articleRouter.get('/:id', getArticle);
 
 // •	POST /articles — Create a new article
-articleRouter.post('/')
+articleRouter.post('/', createArticle);
 
 // •	PUT /articles/:id — Update an existing article
-articleRouter.put('/:id')
+articleRouter.put('/:id', updateArticle);
 
 // •	DELETE /articles/:id — Delete an article
-articleRouter.delete('/:id')
+articleRouter.delete('/:id', deleteArticle);
 
 
+export default articleRouter;
